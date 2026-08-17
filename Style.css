@@ -1,0 +1,548 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+
+/* ==============================
+   CABEÇALHO
+================================= */
+
+header {
+    background-color: #176b3a;
+    color: white;
+    text-align: center;
+    padding: 25px 8%;
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+
+/* ==============================
+   MENU
+================================= */
+
+nav {
+    background-color: #0f4d2a;
+    padding: 15px 5%;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+
+/* ==============================
+   PÁGINA INICIAL
+================================= */
+
+.hero {
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 10%;
+
+    background:
+        linear-gradient(
+            rgba(23, 107, 58, 0.92),
+            rgba(15, 77, 42, 0.92)
+        );
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 950px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   BOTÕES
+================================= */
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.botao {
+    display: inline-block;
+
+    background-color: white;
+    color: #176b3a;
+
+    padding: 13px 23px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #ffd166;
+    color: #222;
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   TÍTULOS
+================================= */
+
+.titulo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo h2 {
+    color: #176b3a;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.titulo p {
+    max-width: 850px;
+    margin: auto;
+}
+
+
+/* ==============================
+   TEXTO
+================================= */
+
+.texto {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.texto p {
+    margin-bottom: 18px;
+}
+
+
+/* ==============================
+   NOSSA MISSÃO
+================================= */
+
+.missao {
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 45px;
+
+    background-color: #eaf5ee;
+
+    border-left: 6px solid #176b3a;
+
+    text-align: center;
+}
+
+.missao p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   CARDS
+================================= */
+
+.cards {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+.card {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.10);
+
+    border-top: 5px solid #176b3a;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #176b3a;
+    margin-bottom: 12px;
+}
+
+
+/* ==============================
+   PROJETOS
+================================= */
+
+.projeto {
+    background-color: white;
+
+    padding: 28px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+
+    border-top: 5px solid #176b3a;
+
+    transition: 0.3s;
+}
+
+.projeto:hover {
+    transform: translateY(-5px);
+}
+
+.projeto h3 {
+    color: #176b3a;
+    margin-bottom: 12px;
+}
+
+.projeto p {
+    margin-bottom: 12px;
+}
+
+
+/* ==============================
+   LISTAS
+================================= */
+
+ul {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   GALERIA
+================================= */
+
+.galeria {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.foto {
+    height: 200px;
+
+    background-color: #dfe9e3;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #176b3a;
+
+    font-weight: bold;
+
+    overflow: hidden;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+/* ==============================
+   FAÇA PARTE
+================================= */
+
+.participar {
+    background-color: #176b3a;
+
+    color: white;
+
+    text-align: center;
+}
+
+.participar .titulo h2 {
+    color: white;
+}
+
+.participar .titulo p {
+    color: white;
+}
+
+.participar .card {
+    color: #333;
+}
+
+
+/* ==============================
+   CONTATO
+================================= */
+
+.contato {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.contato-box {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.contato-box h3 {
+    color: #176b3a;
+
+    margin-bottom: 15px;
+}
+
+.contato-box p {
+    word-break: break-word;
+}
+
+
+/* ==============================
+   TRANSPARÊNCIA
+================================= */
+
+#transparencia {
+    background-color: white;
+}
+
+
+/* ==============================
+   MENSAGEM FINAL
+================================= */
+
+.final {
+    background-color: #eaf5ee;
+
+    text-align: center;
+
+    padding: 70px 10%;
+}
+
+.final h2 {
+    color: #176b3a;
+
+    font-size: 34px;
+
+    margin-bottom: 20px;
+}
+
+.final p {
+    max-width: 900px;
+
+    margin: 10px auto;
+}
+
+
+/* ==============================
+   RODAPÉ
+================================= */
+
+footer {
+    background-color: #0f4d2a;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 10%;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 900px) {
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    nav a {
+        display: inline-block;
+
+        margin: 5px 7px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 50px 6%;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .hero {
+        min-height: 500px;
+
+        padding: 60px 6%;
+    }
+
+    .hero h2 {
+        font-size: 29px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .titulo h2 {
+        font-size: 28px;
+    }
+
+    .missao {
+        padding: 30px 20px;
+    }
+
+    .missao p {
+        font-size: 17px;
+    }
+
+    .botao {
+        width: 100%;
+
+        max-width: 300px;
+
+        text-align: center;
+    }
+
+    nav {
+        padding: 12px 5px;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin: 4px;
+    }
+
+    .final h2 {
+        font-size: 28px;
+    }
+}
