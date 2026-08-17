@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sociedade do Espaço Solidário Santo Antônio — ESSA</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f7f7f7;
+        }
+
+        header {
+            background: #176b3a;
+            color: white;
+            padding: 25px 8%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            background: #0f4d2a;
+            padding: 15px 5%;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 10%;
+            background: linear-gradient(
+                rgba(23, 107, 58, 0.90),
+                rgba(15, 77, 42, 0.90)
+            );
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 13px 22px;
+            background: white;
+            color: #176b3a;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .botao:hover {
+            background: #ffd166;
+            color: #222;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        section:nth-child(even) {
+            background: white;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .titulo h2 {
+            color: #176b3a;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .titulo p {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .texto {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .texto p {
+            margin-bottom: 18px;
+        }
+
+        .missao {
+            background: #eaf5ee;
+            text-align: center;
+            padding: 45px;
+            border-left: 6px solid #176b3a;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .missao p {
+            font-size: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+            border-top: 5px solid #176b3a;
+        }
+
+        .card h3 {
+            color: #176b3a;
+            margin-bottom: 12px;
+        }
+
+        .projeto {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .projeto h3 {
+            color: #176b3a;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            max-width: 900px;
+            margin: auto;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .foto {
+            height: 180px;
+            background: #dfe9e3;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #176b3a;
+            font-weight: bold;
+        }
+
+        .participar {
+            background: #176b3a;
+            color: white;
+            text-align: center;
+        }
+
+        .participar .titulo h2 {
+            color: white;
+        }
+
+        .participar .cards {
+            margin-top: 30px;
+        }
+
+        .participar .card {
+            color: #333;
+        }
+
+        .contato {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .contato-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .contato-box h3 {
+            color: #176b3a;
+            margin-bottom: 15px;
+        }
+
+        .final {
+            background: #eaf5ee;
+            text-align: center;
+            padding: 70px 10%;
+        }
+
+        .final h2 {
+            color: #176b3a;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #0f4d2a;
+            color: white;
+            text-align: center;
+            padding: 30px 10%;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>ESSA</h1>
+    <p>Sociedade do Espaço Solidário Santo Antônio</p>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#missao">Nossa Missão</a>
+    <a href="#fazemos">O Que Fazemos</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#acoes">Ações Sociais</a>
+    <a href="#parcerias">Parcerias</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#participe">Faça Parte</a>
+    <a href="#transparencia">Transparência</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h2>Sociedade do Espaço Solidário Santo Antônio — ESSA</h2>
+
+        <p>
+            Solidariedade, inclusão e cidadania transformando vidas.
+        </p>
+
+        <p>
+            A Sociedade do Espaço Solidário Santo Antônio — ESSA é uma
+            organização não governamental, sem fins lucrativos, que atua
+            na promoção da assistência social e no desenvolvimento de
+            ações voltadas à inclusão, cidadania, educação, esporte,
+            convivência e fortalecimento de vínculos.
+        </p>
+
+        <div class="botoes">
+            <a href="#quem-somos" class="botao">Conheça nossa história</a>
+            <a href="#projetos" class="botao">Conheça nossos projetos</a>
+            <a href="#participe" class="botao">Seja nosso parceiro</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="quem-somos">
+
+    <div class="titulo">
+        <h2>Quem Somos</h2>
+    </div>
+
+    <div class="texto">
+
+        <p>
+            A Sociedade do Espaço Solidário Santo Antônio — ESSA é uma
+            organização não governamental sem fins lucrativos que atua
+            em Aracaju, Sergipe.
+        </p>
+
+        <p>
+            A instituição nasceu em 1995 e adquiriu personalidade jurídica
+            em 22 de outubro de 2003.
+        </p>
+
+        <p>
+            A ESSA desenvolve atividades sociais e filantrópicas, buscando
+            contribuir para a qualidade de vida da comunidade e encontrar
+            soluções para diferentes necessidades da população.
+        </p>
+
+        <p>
+            Sua atuação está voltada principalmente para famílias e pessoas
+            em situação de vulnerabilidade social, incluindo crianças,
+            adolescentes, adultos, idosos e seus familiares.
+        </p>
+
+        <p>
+            A instituição desenvolve suas ações tendo como referência a
+            Política Nacional de Assistência Social, a Lei Orgânica da
+            Assistência Social, a Constituição Federal, o Estatuto da
+            Criança e do Adolescente e os princípios do Sistema Único de
+            Assistência Social — SUAS.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="missao">
+
+    <div class="titulo">
+        <h2>Nossa Missão</h2>
+    </div>
+
+    <div class="missao">
+
+        <p>
+            Promover assistência social, inclusão e cidadania,
+            desenvolvendo programas, projetos e ações de apoio às
+            famílias e pessoas em situação de vulnerabilidade social.
+        </p>
+
+        <p>
+            A ESSA também busca promover cursos, capacitações,
+            atividades comunitárias e ações que contribuam para novas
+            possibilidades de geração de renda e trabalho.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="fazemos">
+
+    <div class="titulo">
+        <h2>O Que Fazemos</h2>
+
+        <p>
+            A ESSA desenvolve diferentes ações sociais para atender
+            às necessidades da comunidade.
+        </p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Alimentação e Segurança Alimentar</h3>
+            <p>
+                Distribuição de cestas básicas, kits alimentares e
+                realização de ações de alimentação e acolhimento para
+                pessoas em situação de vulnerabilidade.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Educação</h3>
+            <p>
+                Ações de alfabetização destinadas a jovens, adultos e
+                idosos, contribuindo para a inclusão educacional e o
+                exercício da cidadania.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Esporte e Qualidade de Vida</h3>
+            <p>
+                Atividades físicas e esportivas voltadas à promoção da
+                saúde, convivência e desenvolvimento social.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Inclusão</h3>
+            <p>
+                Ações voltadas às famílias de crianças e adolescentes
+                com Transtorno do Espectro Autista — TEA, buscando
+                acolhimento, orientação e acesso a serviços.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Solidariedade</h3>
+            <p>
+                Campanhas, bazares, doações e outras iniciativas
+                destinadas às pessoas que mais precisam.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="projetos">
+
+    <div class="titulo">
+        <h2>Nossos Projetos</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="projeto">
+            <h3>Alfabetização para Jovens, Adultos e Idosos</h3>
+            <p>
+                Projeto voltado à alfabetização e inclusão educacional
+                de jovens, adultos e pessoas idosas.
+            </p>
+            <p>
+                A iniciativa busca contribuir para a autonomia,
+                cidadania e participação social dos participantes.
+            </p>
+        </div>
+
+        <div class="projeto">
+            <h3>Alfabetiza Sergipe</h3>
+            <p>
+                A ESSA também desenvolve ações relacionadas ao
+                Alfabetiza Sergipe, promovendo oportunidades de
+                alfabetização e inclusão educacional.
+            </p>
+        </div>
+
+        <div class="projeto">
+            <h3>Aula de Funcional</h3>
+            <p>
+                Atividade voltada à promoção da saúde, qualidade de
+                vida e convivência entre os participantes.
+            </p>
+        </div>
+
+        <div class="projeto">
+            <h3>Karatê</h3>
+            <p>
+                Atividade esportiva desenvolvida pela instituição como
+                parte das ações de esporte, convivência e
+                desenvolvimento social.
+            </p>
+        </div>
+
+        <div class="projeto">
+            <h3>Capoeira para Crianças Neurodivergentes</h3>
+            <p>
+                A atividade busca contribuir para o desenvolvimento
+                físico, emocional e social de crianças neurodivergentes,
+                promovendo inclusão e convivência.
+            </p>
+        </div>
+
+        <div class="projeto">
+            <h3>Projeto Mãos que Ajudam</h3>
+            <p>
+                Projeto desenvolvido por meio de ações solidárias,
+                incluindo o Bazar Solidário e outras iniciativas de
+                apoio à comunidade.
+            </p>
+            <p>
+                O projeto busca beneficiar pessoas em situação de
+                vulnerabilidade por meio de doações e disponibilização
+                de roupas, calçados e outros itens.
+            </p>
+        </div>
+
+        <div class="projeto">
+            <h3>Almoço Solidário</h3>
+            <p>
+                Ação destinada a oferecer alimentação e acolhimento às
+                pessoas em situação de vulnerabilidade, fortalecendo
+                o compromisso da instituição com a segurança alimentar
+                e a dignidade humana.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="apoio">
+
+    <div class="titulo">
+        <h2>Apoio às Famílias</h2>
+    </div>
+
+    <div class="texto">
+
+        <p>
+            A ESSA desenvolve ações direcionadas às famílias de
+            crianças e adolescentes com Transtorno do Espectro
+            Autista — TEA.
+        </p>
+
+        <p>
+            As ações incluem acolhimento, orientação e acesso a
+            informações e atendimentos com profissionais, buscando
+            facilitar o acesso a serviços essenciais e fortalecer
+            a inclusão social.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="acoes">
+
+    <div class="titulo">
+        <h2>Ações Sociais</h2>
+
+        <p>
+            Ao longo de sua atuação, a ESSA desenvolve ações como:
+        </p>
+    </div>
+
+    <ul>
+
+        <li>Distribuição de cestas básicas;</li>
+        <li>Distribuição de kits alimentares;</li>
+        <li>Bazar Solidário;</li>
+        <li>Almoço Solidário;</li>
+        <li>Mutirão de exames;</li>
+        <li>Cursos e capacitações;</li>
+        <li>Alfabetização;</li>
+        <li>Atividades físicas;</li>
+        <li>Atividades esportivas;</li>
+        <li>Ações de inclusão social;</li>
+        <li>Apoio às famílias;</li>
+        <li>Atividades de convivência e fortalecimento de vínculos.</li>
+
+    </ul>
+
+    <div class="texto" style="margin-top:30px;">
+
+        <p>
+            Essas ações são realizadas com a participação da comunidade
+            e com o apoio de parceiros, instituições e pessoas que
+            colaboram com a causa social.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="parcerias">
+
+    <div class="titulo">
+        <h2>Parcerias</h2>
+
+        <p>
+            A ESSA acredita que a transformação social é construída
+            de forma coletiva.
+        </p>
+    </div>
+
+    <div class="texto">
+
+        <p>
+            As ações da instituição contam com a participação da
+            comunidade e com o apoio de parceiros e instituições que
+            contribuem para a realização dos projetos.
+        </p>
+
+        <p>
+            O relatório registra ações e parcerias relacionadas ao
+            Governo de Sergipe, SEASIC e Mesa Brasil, entre outras
+            iniciativas.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="galeria">
+
+    <div class="titulo">
+
+        <h2>Galeria de Fotos</h2>
+
+        <p>
+            Nossas ações em imagens
+        </p>
+
+        <p>
+            Aqui serão apresentadas fotos das atividades realizadas
+            pela ESSA.
+        </p>
+
+    </div>
+
+    <div class="galeria">
+
+        <div class="foto">Distribuição de alimentos</div>
+
+        <div class="foto">Alfabetização</div>
+
+        <div class="foto">Alfabetiza Sergipe</div>
+
+        <div class="foto">Aula de Funcional</div>
+
+        <div class="foto">Karatê</div>
+
+        <div class="foto">Capoeira</div>
+
+        <div class="foto">Projeto Mãos que Ajudam</div>
+
+        <div class="foto">Ações sociais</div>
+
+        <div class="foto">Eventos</div>
+
+        <div class="foto">Terceira Idade</div>
+
+    </div>
+
+</section>
+
+
+<section class="participar" id="participe">
+
+    <div class="titulo">
+
+        <h2>Faça Parte</h2>
+
+        <p>
+            Você também pode ajudar
+        </p>
+
+        <p>
+            A ESSA acredita na força da solidariedade e da participação
+            da comunidade.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Voluntariado</h3>
+            <p>
+                Participe das atividades e projetos da instituição.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Parcerias</h3>
+            <p>
+                Sua instituição pode colaborar com o desenvolvimento
+                de projetos sociais.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Doações</h3>
+            <p>
+                Contribua para que nossas ações possam alcançar
+                mais pessoas.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Apoio aos Projetos</h3>
+            <p>
+                Conheça nossas iniciativas e ajude a fortalecer
+                as ações desenvolvidas pela ESSA.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="transparencia">
+
+    <div class="titulo">
+        <h2>Transparência</h2>
+    </div>
+
+    <div class="texto">
+
+        <p>
+            A ESSA valoriza a participação social, a responsabilidade
+            e a transparência na realização de suas atividades.
+        </p>
+
+        <p>
+            Nesta área do site poderão ser disponibilizados:
+        </p>
+
+        <ul>
+
+            <li>Relatórios de atividades;</li>
+            <li>Projetos sociais;</li>
+            <li>Prestação de contas;</li>
+            <li>Documentos institucionais;</li>
+            <li>Informações sobre parcerias;</li>
+            <li>Registros das ações realizadas.</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<section id="contato">
+
+    <div class="titulo">
+
+        <h2>Contato</h2>
+
+        <p>
+            Sociedade do Espaço Solidário Santo Antônio — ESSA
+        </p>
+
+    </div>
+
+    <div class="contato">
+
+        <div class="contato-box">
+
+            <h3>Endereço</h3>
+
+            <p>
+                Av. São João Batista, nº 782<br>
+                Ponto Novo — Aracaju/SE<br>
+                CEP: 49097-010
+            </p>
+
+        </div>
+
+        <div class="contato-box">
+
+            <h3>CNPJ</h3>
+
+            <p>
+                05.965.109/0001-87
+            </p>
+
+        </div>
+
+        <div class="contato-box">
+
+            <h3>Telefone</h3>
+
+            <p>
+                (79) 98137-5273
+            </p>
+
+        </div>
+
+        <div class="contato-box">
+
+            <h3>E-mail</h3>
+
+            <p>
+                sociedadeessa@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="final">
+
+    <h2>Juntos podemos transformar realidades</h2>
+
+    <p>
+        A solidariedade, a participação da comunidade e o compromisso
+        com as pessoas em situação de vulnerabilidade são fundamentais
+        para a construção de uma sociedade mais justa, acolhedora e
+        participativa.
+    </p>
+
+    <br>
+
+    <strong>
+        Sociedade do Espaço Solidário Santo Antônio — ESSA
+    </strong>
+
+    <p>
+        Solidariedade que acolhe. Inclusão que transforma.
+    </p>
+
+</section>
+
+
+<footer>
+
+    <p>
+        Sociedade do Espaço Solidário Santo Antônio — ESSA
+    </p>
+
+    <p>
+        Aracaju — Sergipe
+    </p>
+
+    <p>
+        © 2026 ESSA. Todos os direitos reservados.
+    </p>
+
+</footer>
+
+</body>
